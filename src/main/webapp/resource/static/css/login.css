@@ -1,0 +1,16 @@
+body{
+    background-color: #dcdde0;
+}
+.navbar{
+    background-color: #0f955e;
+
+}
+.colorMe{
+    color: #000 !important;
+}
+p{
+    text-align: center;
+}
+.EroareLogin{
+    color: #ff215a;
+}

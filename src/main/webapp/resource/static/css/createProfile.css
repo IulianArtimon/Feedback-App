@@ -1,0 +1,23 @@
+body{
+    background-color: #dcdde0;
+}
+.navbar{
+    background-color: #0f955e;
+
+}
+.colorMe{
+    color: #000 !important;
+}
+p{
+    text-align: center;
+}
+.alerta-delogare{
+    display: none;
+}
+.modal-title{
+    text-align: center;
+}
+.modal-footer{
+
+    "btn btn-success"
+}
