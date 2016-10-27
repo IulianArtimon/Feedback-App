@@ -42,7 +42,7 @@
 
                 <!-- Nume Pagina -->
 
-                <h5>Bine ai revenit ${username}!</h5>
+                <h5>Bine ai revenit <b>${username}!</b></h5>
 
                 <!-- Sidebar Menu -->
 
@@ -51,19 +51,18 @@
                         <div class="col-sm-2">
                             <nav class="nav-sidebar">
                                 <ul class="nav">
-                                    <li class="active"><a href="appforFeedback/" class="colorMe"><span class="glyphicon glyphicon-home"></span> <b>SRL</b></a></li>
-                                    <li><a href="#" class="colorMe"><span class="glyphicon glyphicon-pencil"></span><b>Feedback</b></a></li>
+                                    <li class="active"><a href="appforFeedback/" class="colorMe"><span class="glyphicon glyphicon-home"></span> <b> SRL</b></a></li>
+                                    <li><a href="#" class="colorMe"><span class="glyphicon glyphicon-pencil"></span> <b> Feedback</b></a></li>
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle colorMe" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><b>Administrare</b><span class="caret"></span></a>
+                                        <a href="#" class="dropdown-toggle colorMe" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <b> Administrare</b><span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href="#">Schimbare parola</a></li>
-                                            <li><a href="registerAdmin">Creare admin</a></li>
-                                            <li><a href="afiseazaAdmini">Modificare admin</a></li>
-                                            <li><a href="afiseazaAdmini">Stergere admin</a></li>
+                                            <li><a href="registerAdmin">Creaza User</a></li>
+                                            <li><a href="afiseazaAdmini">Modifica User</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-divider"></li>
-                                    <li><a href="#" class="colorMe"><i class="glyphicon glyphicon-off"></i> Delogare</a></li>
+                                    <li><a href=href="${pageContext.request.contextPath}/appforFeedback/login" class="colorMe"><i class="glyphicon glyphicon-off"></i> Delogare</a></li>
 
                                 </ul>
                             </nav>

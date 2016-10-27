@@ -58,9 +58,8 @@
                                             <a href="#" class="dropdown-toggle colorMe" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <b>Administrare</b><span class="caret"></span></a>
                                             <ul class="dropdown-menu" role="menu">
                                                 <li><a href="#">Schimbare parola</a></li>
-                                                <li><a href="registerAdmin">Creare admin</a></li>
-                                                <li><a href="afiseazaAdmini">Modificare</a></li>
-                                                <li><a href="afiseazaAdmini">Stergere</a></li>
+                                                <li><a href="registerAdmin">Creaza User</a></li>
+                                                <li><a href="afiseazaAdmini">Modifica User</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-divider"></li>

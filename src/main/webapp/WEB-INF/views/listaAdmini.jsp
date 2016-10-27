@@ -60,9 +60,8 @@
                                             <a href="#" class="dropdown-toggle colorMe" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <b>Administrare</b><span class="caret"></span></a>
                                             <ul class="dropdown-menu" role="menu">
                                                 <li><a href="#">Schimbare parola</a></li>
-                                                <li><a href="registerAdmin">Creare admin</a></li>
-                                                <li><a href="afiseazaAdmini">Modificare admin</a></li>
-                                                <li><a href="afiseazaAdmini">Stergere admin</a></li>
+                                                <li><a href="registerAdmin">Creaza User</a></li>
+                                                <li><a href="afiseazaAdmini">Modifica User</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-divider"></li>
@@ -78,7 +77,7 @@
 
             <div class="col-lg-10">
                 <form action="afiseazaAdmini" method="get">
-                    <div style="text-align:center" align="right"><h3>Lista Admin &nbsp;&nbsp;&nbsp;&nbsp;</h3></div> <button type="submit" class="btn btn-success">Actualizeaza</button>
+                    <div><h3>Lista Manageri &nbsp;&nbsp;&nbsp;&nbsp;</h3></div> <button type="submit" class="btn btn-success">Actualizeaza</button>
                 </form>
                 <form>
                     <table class="table table-striped" align="center">
@@ -88,6 +87,33 @@
                             <th>Email</th>
                             <th>Nume</th>
                             <th>Prenume</th>
+                            <th>Departament</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${ListaManageri}" var="manager">
+                            <tr>
+                                <td>${manager.username}</td>
+                                <td>${manager.email}</td>
+                                <td>${manager.nume}</td>
+                                <td>${manager.prenume}</td>
+                                <td>${manager.departament}</td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </form>
+                <div><h3>Lista Admin &nbsp;&nbsp;&nbsp;&nbsp;</h3></div>
+
+                <form>
+                    <table class="table table-striped" align="center">
+                        <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Nume</th>
+                            <th>Prenume</th>
+                            <th>Departament</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -97,12 +123,12 @@
                                 <td>${admin.email}</td>
                                 <td>${admin.nume}</td>
                                 <td>${admin.prenume}</td>
+                                <td>-</td>
                             </tr>
                         </c:forEach>
                         </tbody>
                     </table>
                 </form>
-
             </div>
         </div>
     </div>
@@ -112,8 +138,8 @@
 
 <footer class="footer">
     <div class="container">
-        <p class="text-muted">@Copyright aiciulian 2016</p>
-        <p class="text-muted">Aplicatie Web MVC care utilizeaza HTML5, Bootstrap, jQuery, Spring, JSP, Servlets, Hibernate, PostgreSQL</p>
+        <p class="text-muted footerByMe">@Copyright aiciulian 2016</p>
+        <p class="text-muted footerByMe">Aplicatie Web MVC care utilizeaza HTML5, Bootstrap, jQuery, Spring, JSP, Servlets, Hibernate, PostgreSQL</p>
     </div>
 </footer>
 

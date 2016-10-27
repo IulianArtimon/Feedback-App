@@ -8,9 +8,9 @@ body{
 .colorMe{
     color: #000 !important;
 }
-p{
-    text-align: center;
-}
 .MesajEroare{
     color: #ff215a;
+}
+.footerByMe{
+    text-align: center;
 }

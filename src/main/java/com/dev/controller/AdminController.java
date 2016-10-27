@@ -42,8 +42,12 @@ public class AdminController {
     public ModelAndView afiseazaAdmini() {
 
         List<AdminModel> listaDeAdmini = adminService.afiseazaListaAdmini();
-        return new ModelAndView("listaAdmini", "ListaAdmini", listaDeAdmini);
-
+        List<ManagerModel> listaDeManageri = managerService.afiseazaListaManageri();
+        ModelAndView model = new ModelAndView();
+        model.setViewName("listaAdmini");
+        model.addObject("ListaAdmini", listaDeAdmini);
+        model.addObject("ListaManageri",listaDeManageri);
+        return model;
     }
 
 // Creaza Admin

@@ -59,9 +59,8 @@
                                             <a href="#" class="dropdown-toggle colorMe" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <b>Administrare</b><span class="caret"></span></a>
                                             <ul class="dropdown-menu" role="menu">
                                                 <li><a href="#">Schimbare parola</a></li>
-                                                <li><a href="appforFeedback/registerAdmin">Creare admin</a></li>
-                                                <li><a href="appforFeedback/afiseazaAdmini">Modificare admin</a></li>
-                                                <li><a href="appforFeedback/afiseazaAdmini">Stergere admin</a></li>
+                                                <li><a href="appforFeedback/registerAdmin">Creaza USer</a></li>
+                                                <li><a href="appforFeedback/afiseazaAdmini">Modifica User</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-divider"></li>
@@ -102,7 +101,6 @@
                                 Sterge
                             </button>
                         </div>
-                        <a href="adminProfile/${admin.nume}/edit">Edit Profile</a>
                     </div>
                 </div>
             </div>
@@ -115,8 +113,8 @@
 
         <footer class="footer">
             <div class="container">
-                <p class="text-muted">@Copyright aiciulian 2016</p>
-                <p class="text-muted">Aplicatie Web MVC care utilizeaza HTML5, Bootstrap, jQuery, Spring, JSP, Servlets, Hibernate, PostgreSQL</p>
+                <p class="text-muted footerByMe">@Copyright aiciulian 2016</p>
+                <p class="text-muted footerByMe">Aplicatie Web MVC care utilizeaza HTML5, Bootstrap, jQuery, Spring, JSP, Servlets, Hibernate, PostgreSQL</p>
             </div>
         </footer>
 
