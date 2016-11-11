@@ -13,7 +13,7 @@ import java.util.List;
  */
 
 @Repository
-public class ManagerDaoImpl implements ManagerDao {
+        public class ManagerDaoImpl implements ManagerDao {
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -49,7 +49,7 @@ public class ManagerDaoImpl implements ManagerDao {
     @Override
     public ManagerModel findManager(long id) {
 
-//        if (username == null) return null;
+
         return sessionFactory.getCurrentSession().get(ManagerModel.class, id);
 
     }
@@ -60,6 +60,16 @@ public class ManagerDaoImpl implements ManagerDao {
     public ManagerModel getManager(String username) {
 
         return (ManagerModel) sessionFactory.getCurrentSession().createCriteria(ManagerModel.class).add(Restrictions.eq("username", username)).uniqueResult();
+    }
+
+// Sterge Manager
+
+    @Override
+    public void stergeManager(long id) {
+
+        ManagerModel manager = sessionFactory.getCurrentSession().get(ManagerModel.class, id);
+        sessionFactory.getCurrentSession().delete(manager);
+
     }
 
 

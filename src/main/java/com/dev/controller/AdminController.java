@@ -3,6 +3,7 @@ package com.dev.controller;
 import com.dev.model.AdminModel;
 import com.dev.model.ManagerModel;
 import com.dev.service.AdminService;
+import com.dev.service.FeedbackService;
 import com.dev.service.ManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +20,7 @@ import java.util.Map;
  * Created by aiciulian on 14-Oct-16.
  */
 @Controller
-@SessionAttributes("username")
+@SessionAttributes(value = {"username", "departament"})
 public class AdminController {
 
     @Autowired
@@ -27,6 +28,9 @@ public class AdminController {
 
     @Autowired
     private ManagerService managerService;
+
+    @Autowired
+    private FeedbackService feedbackService;
 
 //  Redirect catre pagina Creare Profil
 
@@ -73,7 +77,6 @@ public class AdminController {
     public String getAdminProfile(@PathVariable long adminUsername, Map<String, Object> model) {
 
         AdminModel admin = adminService.findAdmin(adminUsername);
-       // List<AdminModel> findAllAdmin = adminService.findAllAdmin();
         model.put("admin", admin);
         return "adminProfile";
     }
@@ -103,6 +106,21 @@ public class AdminController {
         List<ManagerModel> findAllManageri = managerService.findAllManageri();
         model.put("manager", manager);
         return "managerProfile";
+    }
+
+// Sterge profil manager
+
+    @RequestMapping(value="{id}", method=RequestMethod.GET)
+    public ModelAndView StergeManager(@PathVariable int id)
+    {
+        managerService.stergeManager(id);
+        List<AdminModel> listaDeAdmini = adminService.afiseazaListaAdmini();
+        List<ManagerModel> listaDeManageri = managerService.afiseazaListaManageri();
+        ModelAndView model = new ModelAndView();
+        model.setViewName("listaAdmini");
+        model.addObject("ListaAdmini", listaDeAdmini);
+        model.addObject("ListaManageri",listaDeManageri);
+        return model;
     }
 
 }

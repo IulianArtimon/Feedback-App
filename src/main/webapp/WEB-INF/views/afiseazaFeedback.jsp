@@ -1,17 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
   User: aiciulian
-  Date: 05-Oct-16
-  Time: 13:51
+  Date: 10-Nov-16
+  Time: 16:04
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE>
-<html lang="en">
+<html>
 <head>
-    <title>Admin Page</title>
+    <title>afiseazaFeedback</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -62,28 +61,25 @@
                                 </nav>
                             </div>
                             <div class="col-lg-6">
-                                            <form>
-                                                <table class="table table-striped" align="center">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>Data</th>
-                                                        <th>Nume</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <c:forEach items="${ListaFeedback}" var="feedback">
-                                                        <tr>
-                                                            <td>${feedback.data}</td>
-                                                            <td>${feedback.nume}</td>
-                                                            <td><a href="manager/${feedback.id}"
-                                                                   style="color:green">View</a></td>
-                                                        </tr>
-                                                    </c:forEach>
-                                                    </tbody>
-                                                </table>
-                                            </form>
+                                <form>
+                                    <table class="table table-striped" align="center">
+                                        <thead>
+                                        <tr>
+                                            <th>Data</th>
+                                            <th>Nume</th>
+                                            <th>Feedback</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>${feedbackIndividual.data}</td>
+                                                <td>${feedbackIndividual.nume}</td>
+                                                <td>${feedbackIndividual.feedback}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
                             </div>
-
                         </div>
                     </div>
                 </fieldset>
@@ -111,3 +107,4 @@
 <script src="${pageContext.request.contextPath}../../resource/static/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
+

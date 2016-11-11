@@ -1,19 +1,22 @@
 package com.dev.model;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 /**
  * Created by aiciulian on 18-Oct-16.
  */
 
 @Entity
-@Table(name="feedback")
+@Table(name = "feedback")
 public class FeedbackModel {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private long id;
 
@@ -21,7 +24,7 @@ public class FeedbackModel {
     private String categorie;
 
     @NotNull
-    @Size(max = 25, min = 3)
+    @Size(max = 100, min = 3)
     private String nume;
 
     @NotNull
@@ -30,6 +33,18 @@ public class FeedbackModel {
 
     @NotNull
     private String destinatar;
+
+    @CreationTimestamp
+    @Column(name = "data")
+    private Date data;
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
 
     public long getId() {
         return id;

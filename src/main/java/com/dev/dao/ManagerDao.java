@@ -26,4 +26,11 @@ public interface ManagerDao {
 //  Afiseaza profil manager dupa username
 
     ManagerModel getManager(String username);
+
+// Sterge Manager
+
+    void stergeManager(long id);
+
+
+
 }

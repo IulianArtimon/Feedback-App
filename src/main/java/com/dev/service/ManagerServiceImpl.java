@@ -61,4 +61,17 @@ public class ManagerServiceImpl implements ManagerService {
 
         return managerDao.getManager(username);
     }
+
+// Sterge Manager
+
+    @Transactional
+    @Override
+    public void stergeManager(long id) {
+
+         managerDao.stergeManager(id);
+    }
+
+
+
+
 }

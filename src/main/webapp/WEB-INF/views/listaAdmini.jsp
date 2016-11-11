@@ -55,13 +55,12 @@
                                 <nav class="nav-sidebar">
                                     <ul class="nav">
                                         <li class="active"><a href="appforFeedback/" class="colorMe"><span class="glyphicon glyphicon-home"></span> <b>Home</b></a></li>
-                                        <li><a href="#" class="colorMe"><span class="glyphicon glyphicon-pencil"></span> <b>Feedback</b></a></li>
+                                        <li><a href="${pageContext.request.contextPath}/appforFeedback/feedbackPage" class="colorMe"><span class="glyphicon glyphicon-pencil"></span> <b>Feedback</b></a></li>
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle colorMe" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <b>Administrare</b><span class="caret"></span></a>
                                             <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Schimbare parola</a></li>
                                                 <li><a href="registerAdmin">Creaza User</a></li>
-                                                <li><a href="afiseazaAdmini">Modifica User</a></li>
+                                                <li><a href="afiseazaAdmini">Sterge User</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-divider"></li>
@@ -98,6 +97,8 @@
                                 <td>${manager.nume}</td>
                                 <td>${manager.prenume}</td>
                                 <td>${manager.departament}</td>
+                                <td><a href="${manager.id}" value="${manager.id}"
+                                       style="color:red">Delete</a></td>
                             </tr>
                         </c:forEach>
                         </tbody>

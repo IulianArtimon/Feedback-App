@@ -1,26 +1,26 @@
 package com.dev.controller;
 
 import com.dev.model.AdminModel;
+import com.dev.model.FeedbackModel;
 import com.dev.model.ManagerModel;
 import com.dev.security.HashPassword;
 import com.dev.service.AdminService;
+import com.dev.service.FeedbackService;
 import com.dev.service.ManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * Created by aiciulian on 14-Oct-16.
  */
 
 @Controller
-@SessionAttributes("username")
+@SessionAttributes(value = {"username", "departament"})
 public class LoginController {
 
     @Autowired
@@ -28,6 +28,9 @@ public class LoginController {
 
     @Autowired
     private ManagerService managerService;
+
+    @Autowired
+    private FeedbackService feedbackService;
 
 // Redirect catre pagina de login
 
@@ -45,13 +48,16 @@ public class LoginController {
 
         ManagerModel manager = managerService.getManager(username);
         String Username = manager.getUsername();
-        String  Parola = manager.getParola();
-
+        String Parola = manager.getParola();
+        String Departament = manager.getDepartament();
 
         if(username.equals(Username) && HashPassword.checkPassword(parola, Parola)){
 
+            List<FeedbackModel> listaFeedback = feedbackService.listaFeedbackDupaDestinatar(Departament);
             session.setAttribute("loggedInManager", manager);
             model.addAttribute("username", Username);
+            model.addAttribute("departament", Departament);
+            model.addAttribute("ListaFeedback", listaFeedback);
             return "manager";
 
         }
@@ -97,5 +103,6 @@ public class LoginController {
         session.removeAttribute("loggedInManager");
         return "login";
     }
+
 
 }

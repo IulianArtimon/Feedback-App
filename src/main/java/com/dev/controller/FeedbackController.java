@@ -2,16 +2,16 @@ package com.dev.controller;
 
 import com.dev.model.FeedbackModel;
 import com.dev.security.VerifyRecaptcha;
+import com.dev.service.AdminService;
 import com.dev.service.FeedbackService;
+import com.dev.service.ManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.io.IOException;
@@ -21,10 +21,17 @@ import java.io.IOException;
  */
 
 @Controller
+@SessionAttributes(value = {"username", "departament"})
 public class FeedbackController {
 
     @Autowired
     private FeedbackService feedbackService;
+
+    @Autowired
+    private AdminService adminService;
+
+    @Autowired
+    private ManagerService managerService;
 
 //  Redirect catre pagina de Feedback
 
@@ -58,6 +65,18 @@ public class FeedbackController {
 
 
         }
+    }
+
+// Afiseaza feedback
+
+    @RequestMapping(value="/manager/{id}", method=RequestMethod.GET)
+    public ModelAndView afiseazaFeedbackIndividual(@PathVariable("id") long id) {
+
+        FeedbackModel feedbackIndividual = feedbackService.afiseazaFeedbackIndividual(id);
+        ModelAndView model = new ModelAndView();
+        model.setViewName("afiseazaFeedback");
+        model.addObject("feedbackIndividual", feedbackIndividual);
+        return model;
     }
 
 }

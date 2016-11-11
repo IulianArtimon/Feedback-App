@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import java.util.List;
 
 /**
@@ -35,11 +36,30 @@ public class FeedbackServiceimpl implements FeedbackService {
         return feedbackDao.afiseazaListaFeedback();
     }
 
+// Afiseaza lista feedback
 
     @Transactional
     @Override
     public List<FeedbackModel> gasesteToateInregistrarile() {
 
         return feedbackDao.gasesteToateInregistrarile();
+    }
+
+// Afiseaza feedback dupa destinatar
+
+    @Transactional
+    @Override
+    public List<FeedbackModel> listaFeedbackDupaDestinatar(String Departament) {
+
+        return feedbackDao.listaFeedbackDupaDestinatar(Departament);
+    }
+
+// Afiseaza Feedback
+
+    @Transactional
+    @Override
+    public FeedbackModel afiseazaFeedbackIndividual(long id) {
+
+        return feedbackDao.afiseazaFeedbackIndividual(id);
     }
 }

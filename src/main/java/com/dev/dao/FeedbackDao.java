@@ -18,4 +18,12 @@ public interface FeedbackDao {
     List<FeedbackModel> afiseazaListaFeedback();
 
     List<FeedbackModel> gasesteToateInregistrarile();
+
+// Afiseaza feedback dupa destinatar
+
+    List<FeedbackModel> listaFeedbackDupaDestinatar(String Departament);
+
+// Afiseaza Feedback
+
+    FeedbackModel afiseazaFeedbackIndividual(long id);
 }
