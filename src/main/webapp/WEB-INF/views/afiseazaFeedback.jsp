@@ -60,7 +60,7 @@
                                     </ul>
                                 </nav>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-10">
                                 <form>
                                     <table class="table table-striped" align="center">
                                         <thead>

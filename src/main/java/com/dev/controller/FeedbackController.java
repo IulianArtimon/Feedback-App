@@ -47,7 +47,7 @@ public class FeedbackController {
     @RequestMapping(value = "/salveazaFeedback", method = RequestMethod.POST)
     public String salveazaFeedback(@RequestParam ("g-recaptcha-response") String gRecaptchaResponse, @ModelAttribute("formularNou") @Valid FeedbackModel feedbackModel, BindingResult result, ModelMap model)throws IOException {
 
-// Validare input utilizand JSR 303, Hibernate Validator si Google reCaptcha
+// Validare input utilizand Hibernate Validator si Google reCaptcha
 
         if (result.hasErrors() || !VerifyRecaptcha.verify(gRecaptchaResponse)) {
 
