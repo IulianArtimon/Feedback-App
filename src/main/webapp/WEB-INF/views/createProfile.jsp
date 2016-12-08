@@ -62,7 +62,7 @@
                                         </ul>
                                     </li>
                                     <li class="nav-divider"></li>
-                                    <li><a href=href="${pageContext.request.contextPath}/appforFeedback/login" class="colorMe"><i class="glyphicon glyphicon-off"></i> Delogare</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/appforFeedback/login" class="colorMe"><i class="glyphicon glyphicon-off"></i> Delogare</a></li>
 
                                 </ul>
                             </nav>

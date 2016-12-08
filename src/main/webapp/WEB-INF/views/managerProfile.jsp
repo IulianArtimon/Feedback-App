@@ -46,7 +46,6 @@
 
                     <h5>Bine ai revenit <b>${username}</b></h5>
 
-
                     <!-- Sidebar Menu -->
 
                     <div class="container">
@@ -55,8 +54,17 @@
                                 <nav class="nav-sidebar">
                                     <ul class="nav">
                                         <li class="active"><a href="appforFeedback/" class="colorMe"><span class="glyphicon glyphicon-home"></span> <b>Home</b></a></li>
+                                        <li><a href="${pageContext.request.contextPath}/appforFeedback/feedbackPage" class="colorMe"><span class="glyphicon glyphicon-pencil"></span> <b>Feedback</b></a></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle colorMe" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <b>Administrare</b><span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="${pageContext.request.contextPath}/appforFeedback/registerAdmin">Creaza User</a></li>
+                                                <li><a href="${pageContext.request.contextPath}/appforFeedback/afiseazaAdmini">Sterge User</a></li>
+                                            </ul>
+                                        </li>
                                         <li class="nav-divider"></li>
                                         <li><a href="${pageContext.request.contextPath}/appforFeedback/login" class="colorMe"><i class="glyphicon glyphicon-off"></i> Delogare</a></li>
+
                                     </ul>
                                 </nav>
                             </div>

@@ -21,7 +21,7 @@ public class HashPassword {
             return "Parola gresita";
         }
 
-        String hash = BCrypt.gensalt(15);
+        String hash = BCrypt.gensalt(10);
         String parolaHash= BCrypt.hashpw(parola,hash );
         return parolaHash;
 

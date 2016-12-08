@@ -31,7 +31,7 @@ public class ManagerModel {
     private String departament;
 
     @NotNull
-    @Size(max = 25, min = 5)
+    @Size(max = 25, min = 3)
     private String username;
 
     @NotNull

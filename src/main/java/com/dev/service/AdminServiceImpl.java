@@ -53,7 +53,6 @@ public class AdminServiceImpl implements AdminService {
     }
 
 
-
 //  Afiseaza profil admin dupa username
 
     @Transactional
